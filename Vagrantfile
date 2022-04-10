@@ -11,5 +11,6 @@ Vagrant.configure("2") do |config|
     vb.memory = 4096
     vb.linked_clone = true
   end 
+  config.vbguest.no_install = true
 end
   
