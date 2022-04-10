@@ -34,7 +34,7 @@ Setting `DOCKER_HOST` to `ssh://docker.local` at this point would also allow con
 
 ## Motivation
 
-* To use Docker Desktop for Windows Hyper-V must be enabled
-* Running other virtual machines in Oracle VirtualBox (while possible) suffer severe performance degradation
-* There is an alternative solution called *Docker Toolbox* but it's deprecated
-* Enabling Hyper-V is already a minor performance hit to running simply just the main Windows operating system
+- To use Docker Desktop for Windows Hyper-V must be enabled
+- Running other virtual machines in Oracle VirtualBox (while possible) suffer severe performance degradation
+- There is an alternative solution called *Docker Toolbox* but it's deprecated
+- Enabling Hyper-V is already a minor performance hit to running simply just the main Windows operating system
