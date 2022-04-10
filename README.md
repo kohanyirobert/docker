@@ -7,23 +7,29 @@ An alternative solution to run Linux containers on Windows without Hyper-V.
 1. Install the [Docker client binary](https://docs.docker.com/engine/install/binaries/#install-server-and-client-binaries-on-windows)
 1. Clone the repository
 1. Run `vagrant up`
-1. [Edit the `hosts` file](https://hostsfileeditor.com/) at `C:\Windows\System32\drivers\etc` and add the following entry
+1. [Edit your *hosts* file](https://hostsfileeditor.com/) at `C:\Windows\System32\drivers\etc` and add the following entry
 
     ```txt
     10.0.100.100    docker.local
     ```
 
-1. Configure `~/.ssh/config` and add a similar entry (**replace `<your/repo/path>`**)
-
-    ```txt
-    Host docker.local
-        User vagrant
-        IdentityFile ~/<your/repo/path>/.vagrant/machines/default/virtualbox/private_key
-        StrictHostKeyChecking no
-    ```
-
-1. Set `DOCKER_HOST` environment variable to `ssh://docker.local`
+1. Set `DOCKER_HOST` environment variable to `tcp://docker.local`
 1. Run `docker info` to verify that the Docker client on the Windows host can communicate with the Docker daemon running inside the guest virtual machine
+
+### Extra
+
+To allow connecting to the virtual machine from any location configure `~/.ssh/config` and add a similar entry as below
+
+```txt
+Host docker.local
+    User vagrant
+    IdentityFile ~/<your/repo/path>/.vagrant/machines/default/virtualbox/private_key
+    StrictHostKeyChecking no
+```
+
+Setting `DOCKER_HOST` to `ssh://docker.local` at this point would also allow connections to the Docker daemon, however TCP is faster, albeit insecure.
+
+**Note**: make sure to replace `<your/repo/path>` with your own repository's absolute path.
 
 ## Motivation
 
