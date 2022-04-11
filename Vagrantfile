@@ -19,13 +19,12 @@ def smb_synced_folder(vm, host_path, guest_path)
 end
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/focal64"
-  config.vm.box_version = "20220315.0.0"
+  config.vm.box = "generic/ubuntu2004"
+  config.vm.box_version = "3.6.12"
   config.vm.hostname = "docker"
   config.vm.network "private_network", ip: "10.0.100.100", netmask: "255.255.255.0"
   smb_synced_folder config.vm, ".", "/vagrant"
   smb_synced_folder config.vm, "C:/Users", "/c/Users"
-  shell_provision config.vm, "cifs.sh"
   shell_provision config.vm, "docker.sh"
   config.vm.provider "virtualbox" do |vb|
     vb.cpus = 2
