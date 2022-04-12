@@ -26,6 +26,7 @@ Vagrant.configure("2") do |config|
   smb_synced_folder config.vm, ".", "/vagrant"
   smb_synced_folder config.vm, "C:/Users", "/c/Users"
   shell_provision config.vm, "docker.sh"
+  shell_provision config.vm, "compose.sh"
   config.vm.provider "virtualbox" do |vb|
     vb.cpus = 2
     vb.memory = 4096
