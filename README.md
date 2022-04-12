@@ -38,10 +38,11 @@ Docker version 20.10.14, build a224086
 
 1. Set `DOCKER_HOST` environment variable to `tcp://docker.local`
 1. Run `docker info` to verify that the Docker client on the Windows host can communicate with the Docker daemon running inside the guest virtual machine
+1. For best result SSH into the machine with `ssh docker.local` and work there as if you were on a Linux box
 
 ### Bind Mounts
 
-When using bind mounts the host path must be specified as a quasi-unix path, e.g. `C:\Users\username\Downloads` must be specified as `/c/Users/username/Downloads` (due to the preconfigured SMB synced folders).
+When using bind mounts directly from the host machine (Windows) the Docker host path must be specified as a quasi-unix path, e.g. `C:\Users\username\Downloads` must be specified as `/c/Users/username/Downloads` (due to the preconfigured SMB synced folders). To avoid this, simply SSH into the machine and work as if you were on Linux - this saves a lot of trouble.
 
 Docker Compose (the standalone binary and not the `docker` binary *subcommand*) seems to obey [`COMPOSE_FORCE_WINDOWS_HOST`](https://docs.docker.com/compose/reference/envvars/#compose_convert_windows_paths) environment variable to some extent, but it still [fails to convert relative paths like `.` or `./`](https://github.com/docker/compose/issues/9132#issuecomment-1094378896) to be in quasi-unix format.
 
