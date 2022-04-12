@@ -30,6 +30,7 @@ Vagrant.configure("2") do |config|
     vb.cpus = 2
     vb.memory = 4096
     vb.linked_clone = true
+    vb.customize ["modifyvm", :id, "--vram", 16]
   end 
 end
   
