@@ -29,9 +29,9 @@ Vagrant.configure("2") do |config|
   shell_provision config.vm, "compose.sh"
   config.vm.provider "virtualbox" do |vb|
     vb.cpus = 2
-    vb.memory = 4096
+    vb.memory = 2048
     vb.linked_clone = true
     vb.customize ["modifyvm", :id, "--vram", 16]
-  end 
+  end
 end
-  
+
