@@ -28,7 +28,8 @@ Docker version 20.10.14, build a224086
 
 1. Install the [Docker client binary](https://docs.docker.com/engine/install/binaries/#install-server-and-client-binaries-on-windows)
 1. Clone the repository
-1. Run `vagrant up` **with administrator privileges** (due to using [SMB synced folders](https://www.vagrantup.com/docs/synced-folders/smb#prerequisites) for better performance)
+1. Run `vagrant up`
+    - Due to using [SMB synced folders](https://www.vagrantup.com/docs/synced-folders/smb#prerequisites) for better performance over VirtualBox shared folders **Vagrant will ask for administrator privileges** a few times
     - Run `fsmgmt.msc` or use commands like `Get-SmbShare` to manage SMB shares.
 1. [Edit your *hosts* file](https://hostsfileeditor.com/) at `C:\Windows\System32\drivers\etc` and add the following entry
 
