@@ -7,6 +7,7 @@ then
   curl -fsSL https://get.docker.com | sudo sh
   sudo groupadd docker
   sudo usermod -aG docker $USER
+  newgrp docker
   # https://unix.stackexchange.com/q/398540/45810
   sudo mkdir -p /etc/systemd/system/docker.service.d
   cat << EOF | sudo tee /etc/systemd/system/docker.service.d/override.conf
