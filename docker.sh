@@ -9,7 +9,7 @@ then
   cat << EOF | sudo tee /etc/systemd/system/docker.service.d/override.conf
 [Service]
 ExecStart=
-ExecStart=/usr/bin/dockerd -H fd:// -H tcp://0.0.0.0 --containerd=/run/containerd/containerd.sock
+ExecStart=/usr/bin/dockerd -H fd:// -H tcp://0.0.0.0:2375 --containerd=/run/containerd/containerd.sock
 EOF
   sudo systemctl daemon-reload
   sudo systemctl restart docker

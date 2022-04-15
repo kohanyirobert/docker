@@ -37,7 +37,7 @@ Docker version 20.10.14, build a224086
     10.0.100.100    docker.local
     ```
 
-1. Set `DOCKER_HOST` environment variable to `tcp://docker.local`
+1. Set `DOCKER_HOST` environment variable to `tcp://docker.local:2375`
 1. Run `docker info` to verify that the Docker client on the Windows host can communicate with the Docker daemon running inside the guest virtual machine
 1. For best result SSH into the machine with `ssh docker.local` and work there as if you were on a Linux box
 
