@@ -9,8 +9,9 @@ then
 else
   docker run \
     --detach \
-    --publish 5000:5000 \
+    --publish 80:5000 \
     --restart=always \
     --name registry \
+    --mount type=volume,source=registry,destination=/var/lib/registry \
     registry:2.8.1
 fi
