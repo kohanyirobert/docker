@@ -7,10 +7,7 @@ plugins_dir=$HOME/.docker/cli-plugins
 plugin_path=$plugins_dir/docker-compose
 mkdir -p $plugins_dir
 cd $HOME/.cache
-wget \
-  --no-verbose \
-  --timestamping \
-  $compose_url
+wget --no-verbose --timestamping $compose_url
 chmod +x $compose_binary
 ln -srf $compose_binary $plugin_path
 cd ~
