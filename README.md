@@ -70,3 +70,7 @@ Setting `DOCKER_HOST` to `ssh://docker.local` at this point would also allow con
 - Running other virtual machines in Oracle VirtualBox (while possible) suffer severe performance degradation
 - There is an alternative solution called *Docker Toolbox* but it's deprecated
 - Enabling Hyper-V is already a minor performance hit to running simply just the main Windows operating system
+
+## Notes
+
+- A private container registry (using Docker's own `registry` image) is started automatically running on port 80 over HTTP - **be advised** that it does not provide tag immutability
